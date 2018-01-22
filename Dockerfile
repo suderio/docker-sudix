@@ -1,3 +1,5 @@
+# docker run -it -v /mnt/lfs:/LFS .
+
 FROM debian:stretch-slim
 
 RUN apt-get update && apt-get upgrade -y
@@ -31,14 +33,16 @@ RUN mkdir -v $LFS/tools && ln -sv $LFS/tools /
 RUN groupadd lfs && \
     useradd -s /bin/bash -g lfs -m -k /dev/null lfs && \
     echo "lfs:lfs" | chpasswd && \
-    chown -v lfs $LFS/tools && \
-    chown -v lfs $LFS/sources
+    chown -v -R lfs $LFS/tools && \
+    chown -v -R lfs $LFS/sources
 USER lfs
 COPY .bash_profile /home/lfs/
 COPY .bashrc /home/lfs/
 RUN source ~/.bash_profile
 # Temporary System
-COPY build-package.sh /LFS/sources/ && chmod u+x /LFS/sources/build-package.sh
+COPY build-package.sh /LFS/sources/ 
 COPY toolchain /LFS/sources/
-RUN $LFS/sources/build-package.sh binutils-2.27.tar.bz2 toolchain/binutils.sh
+WORKDIR $LFS/sources
+RUN $LFS/sources/build-package.sh binutils-2.29.tar.bz2 binutils_pass1.sh
+ENTRYPOINT ["/bin/sh"]
 
