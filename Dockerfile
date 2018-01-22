@@ -56,25 +56,25 @@ RUN $LFS/sources/build-package.sh dejagnu-1.6.tar.gz dejagnu.sh
 RUN $LFS/sources/build-package.sh check-0.11.0.tar.gz check.sh
 RUN $LFS/sources/build-package.sh ncurses-6.0.tar.gz ncurses.sh
 RUN $LFS/sources/build-package.sh bash-4.4.tar.gz bash.sh
-RUN $LFS/sources/build-package.sh bison-3.0.4.tar.xz bison.sh
+RUN $LFS/sources/build-package.sh bison-3.0.4.tar.xz basic.sh
 RUN $LFS/sources/build-package.sh bzip2-1.0.6.tar.gz bzip2.sh
 RUN $LFS/sources/build-package.sh coreutils-8.27.tar.xz coreutils.sh
-RUN $LFS/sources/build-package.sh diffutils-3.6.tar.xz diffutils.sh
-RUN $LFS/sources/build-package.sh file-5.31.tar.gz file.sh
-RUN $LFS/sources/build-package.sh findutils-4.6.0.tar.gz findutils.sh
-RUN $LFS/sources/build-package.sh gawk-4.1.4.tar.xz gawk.sh
+RUN $LFS/sources/build-package.sh diffutils-3.6.tar.xz basic.sh
+RUN $LFS/sources/build-package.sh file-5.31.tar.gz basic.sh
+RUN $LFS/sources/build-package.sh findutils-4.6.0.tar.gz basic.sh
+RUN $LFS/sources/build-package.sh gawk-4.1.4.tar.xz basic.sh
 RUN $LFS/sources/build-package.sh gettext-0.19.8.1.tar.xz gettext.sh
-RUN $LFS/sources/build-package.sh grep-3.1.tar.xz grep.sh
-RUN $LFS/sources/build-package.sh gzip-1.8.tar.xz gzip.sh
-RUN $LFS/sources/build-package.sh m4-1.4.18.tar.xz m4.sh
+RUN $LFS/sources/build-package.sh grep-3.1.tar.xz basic.sh
+RUN $LFS/sources/build-package.sh gzip-1.8.tar.xz basic.sh
+RUN $LFS/sources/build-package.sh m4-1.4.18.tar.xz basic.sh
 RUN $LFS/sources/build-package.sh make-4.2.1.tar.bz2 make.sh
-RUN $LFS/sources/build-package.sh patch-2.7.5.tar.xz patch.sh
+RUN $LFS/sources/build-package.sh patch-2.7.5.tar.xz basic.sh
 RUN $LFS/sources/build-package.sh perl-5.26.0.tar.xz perl.sh
-RUN $LFS/sources/build-package.sh sed-4.4.tar.xz sed.sh
-RUN $LFS/sources/build-package.sh tar-1.29.tar.xz tar.sh
-RUN $LFS/sources/build-package.sh texinfo-6.4.tar.xz texinfo.sh
+RUN $LFS/sources/build-package.sh sed-4.4.tar.xz basic.sh
+RUN $LFS/sources/build-package.sh tar-1.29.tar.xz basic.sh
+RUN $LFS/sources/build-package.sh texinfo-6.4.tar.xz basic.sh
 RUN $LFS/sources/build-package.sh util-linux-2.30.1.tar.xz util_linux.sh
-RUN $LFS/sources/build-package.sh xz-5.2.3.tar.xz xz.sh
+RUN $LFS/sources/build-package.sh xz-5.2.3.tar.xz basic.sh
 
 COPY stripping.sh /LFS/sources/
 RUN $LFS/sources/stripping.sh
