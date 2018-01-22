@@ -1,5 +1,3 @@
-# docker run -it -v /mnt/lfs:/LFS .
-
 FROM debian:stretch-slim as toolchain
 
 RUN apt-get update && apt-get upgrade -y
@@ -79,5 +77,7 @@ RUN $LFS/sources/build-package.sh xz-5.2.3.tar.xz basic.sh
 COPY stripping.sh /LFS/sources/
 RUN $LFS/sources/stripping.sh
 
-ENTRYPOINT ["/bin/sh"]
+FROM scratch
+COPY --from=toolchain /tools /
+#ENTRYPOINT ["/bin/sh"]
 
