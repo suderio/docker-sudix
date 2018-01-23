@@ -4,4 +4,4 @@
 
 make install
 
-make check
+# make check

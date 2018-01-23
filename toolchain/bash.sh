@@ -4,7 +4,7 @@
 
 make
 
-make tests
+# make tests
 
 make install
 

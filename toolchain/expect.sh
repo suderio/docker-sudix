@@ -9,6 +9,6 @@ sed 's:/usr/local/bin:/bin:' configure.orig > configure
 
 make
 
-make test
+# make test
 
 make SCRIPTS="" install

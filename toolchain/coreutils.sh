@@ -4,6 +4,6 @@
 
 make
 
-make RUN_EXPENSIVE_TESTS=yes check
+# make RUN_EXPENSIVE_TESTS=yes check
 
 make install

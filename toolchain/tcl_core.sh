@@ -5,7 +5,7 @@ cd unix
 
 make
 
-TZ=UTC make test
+# TZ=UTC make test
 
 make install
 

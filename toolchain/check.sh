@@ -4,6 +4,6 @@ PKG_CONFIG= ./configure --prefix=/tools
 
 make
 
-make check
+# make check
 
 make install
