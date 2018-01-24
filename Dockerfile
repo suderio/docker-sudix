@@ -33,6 +33,11 @@ RUN groupadd lfs && \
     echo "lfs:lfs" | chpasswd && \
     chown -v -R lfs $LFS/tools && \
     chown -v -R lfs $LFS/sources
+# to avoid "cannot delete file, file name too long" in coreutils
+# see http://wiki.apparmor.net/index.php/FAQ#Failed_name_lookup_-_name_too_long
+# see https://github.com/moby/moby/issues/13451
+RUN echo 9000 > /sys/module/apparmor/parameters/path_max
+
 USER lfs
 COPY .bash_profile /home/lfs/
 COPY .bashrc /home/lfs/
